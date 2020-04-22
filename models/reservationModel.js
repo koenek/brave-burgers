@@ -24,7 +24,8 @@ const reservationSchema = new mongoose.Schema({
   },
   // telnr.
   telNum: {
-    type: Number,
+    type: String, // Should be changed using a regular expression later
+    minlength: 9,
     required: [true, 'Please provide a phone number'],
   },
   // comments

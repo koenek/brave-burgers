@@ -4,7 +4,7 @@ const reservationController = require('../controllers/reservationController');
 const router = express.Router();
 
 router
-  .route('/reservations')
+  .route('/')
   .get(reservationController.getAllReservations)
   .post(reservationController.createReservation);
 

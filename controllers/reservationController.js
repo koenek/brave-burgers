@@ -14,6 +14,7 @@ exports.getAllReservations = async (req, res) => {
   } catch (err) {
     res.status(404).json({
       status: 'fail',
+      message: err.message,
     });
   }
 };
@@ -21,8 +22,7 @@ exports.getAllReservations = async (req, res) => {
 exports.createReservation = async (req, res) => {
   try {
     const newReservation = await Reservation.create(req.body);
-    console.log(newReservation);
-    console.log(req.body);
+    newReservation.telNum = '+31' + newReservation.telNum;
 
     res.status(201).json({
       status: 'success',
@@ -33,6 +33,7 @@ exports.createReservation = async (req, res) => {
   } catch (err) {
     res.status(404).json({
       status: 'fail',
+      message: err.message,
     });
   }
 };
