@@ -1,0 +1,18 @@
+[
+  {
+    "reservationDate": "2020-04-01",
+    "reservationTime": "19:00:00",
+    "guests": 4,
+    "email": "claire@example.com",
+    "telNum": 0,
+    "comments": ""
+  },
+  {
+    "reservationDate": "2020-04-01",
+    "reservationTime": "20:00:00",
+    "guests": 4,
+    "email": "leon@example.com",
+    "telNum": 0,
+    "comments": ""
+  }
+]
