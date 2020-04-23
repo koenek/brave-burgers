@@ -20,6 +20,7 @@ exports.getAllReservations = async (req, res) => {
 };
 
 exports.createReservation = async (req, res) => {
+  console.log(req.body);
   try {
     const newReservation = await Reservation.create(req.body);
     newReservation.telNum = '+31' + newReservation.telNum;
@@ -35,5 +36,6 @@ exports.createReservation = async (req, res) => {
       status: 'fail',
       message: err.message,
     });
+    console.log(err);
   }
 };
