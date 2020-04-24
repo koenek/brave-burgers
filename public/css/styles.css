@@ -1,15 +1,18 @@
 body {
   font-family: 'Quattrocento Sans', sans-serif;
+  color: #fff0f0;
+  background-color: #fff0f0;
 }
 
 .nav-link {
-  color: #ffffff;
+  text-transform: uppercase;
+  padding-top: 0;
+  color: #fff0f0;
 }
 
-.nav-link:hover {
-  color: grey;
-  border-top: grey !important;
-  text-transform: uppercase;
+a.nav-link:hover {
+  border-top: 3px solid #fff0f0;
+  color: #fff0f0;
 }
 
 .cover-container {
@@ -24,58 +27,98 @@ body {
   overflow-x: hidden;
 }
 
+.masthead-brand {
+  font-size: 2.4em;
+}
+
+.navbar-toggler {
+  padding-bottom: 0.6em;
+}
+
+.fa-hamburger {
+  font-size: 1.5em;
+  color: #fff0f0;
+}
+
 .jumbotron-leader {
+  /* background-color: #bb9090; */
+  visibility: hidden;
+  opacity: 0.5;
+}
+
+.jumbotron-leader h1 {
+  opacity: 2;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italicize {
+  font-style: italic;
+}
+
+.lead {
+  font-size: 1.25em;
+  border-radius: 1.7em;
   background-color: #000000;
-  opacity: 0.75;
+  padding: 25px;
+  opacity: 0.87;
+}
+
+.quote {
+  color: #bb9090;
+  font-size: 1.75em;
+}
+
+.welcome-message {
+  font-size: 2.75em;
+}
+
+.impression {
+  color: #bb9090;
 }
 
 .carousel-container {
   padding: 5px;
 }
 
-/* .impression {
-  background: #ffffff;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  max-height: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-} */
+.carousel-inner {
+  box-shadow: 5px 5px 5px #000000;
+  border-radius: 0.5%;
+}
 
 .reserveren {
   background-image: url('../img/background2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh !important;
   width: 100vw !important;
   max-height: 100%;
   max-width: 100%;
   overflow-x: hidden;
 }
 
-textarea {
-  width: 100%;
-  height: 200px;
-}
-
-label {
-  color: #ffffff;
+.reserveren-heading {
+  color: #fff0f0;
 }
 
 .calendar {
-  background-color: white;
+  background-color: #fff0f0;
+  color: #bb9090;
   padding: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-  /* display: none; */
+  box-shadow: 5px 5px 5px #000000;
+  border: #bb9090;
+  border-radius: 0.5%;
+  margin-bottom: 50px;
 }
 
 .calendar .dropdown {
   display: none;
   position: absolute;
-  background-color: #fff;
-  color: #1caff6;
+  background-color: #fff0f0;
+  color: #bb9090;
+  border: 1px solid #bb9090;
   text-align: center;
   font-size: 14pt;
   padding-top: 5px;
@@ -91,10 +134,13 @@ label {
   cursor: pointer;
   opacity: 0.7;
   transition: 0.5s opacity;
+  color: #bb9090;
 }
 
 .calendar .dropdown .dropdown-item:hover {
   opacity: 1;
+  color: #fff0f0;
+  background-color: #ddc0c0;
 }
 
 .calendar .years {
@@ -108,8 +154,9 @@ label {
 
 .calendar .calendar-btn {
   float: left;
-  background-color: #24aeff;
-  color: white;
+  border: 1px solid #bb9090;
+  background-color: #fff0f0;
+  color: #bb9090;
   text-align: center;
   font-size: 14pt;
   padding-top: 5px;
@@ -121,7 +168,7 @@ label {
 }
 
 .calendar .calendar-btn:hover {
-  background-color: #1f71a1;
+  background-color: #ddc0c0;
 }
 
 .calendar .year-btn {
@@ -136,24 +183,24 @@ label {
   font-size: 13pt;
   text-align: center;
   border-radius: 10px;
-  border: solid 1px #ddd;
+  border: solid 1px #bb9090;
 }
 
 .calendar .calendar-dates .days .day.blank {
-  background-color: white;
+  visibility: hidden;
   border: none;
 }
 
 .calendar .calendar-dates .days .day.selected {
-  background-color: #1caff6;
-  color: white;
+  background-color: #bb9090;
+  color: #fff0f0;
   cursor: pointer;
   opacity: 0.5;
   transition: 0.5s opacity;
 }
 
 .day:hover {
-  background-color: #24aeff;
+  background-color: #ddc0c0;
   cursor: pointer;
 }
 
@@ -162,11 +209,62 @@ label {
 }
 
 .calendar .calendar-dates .days .day.label {
-  height: 40px;
-  background-color: white;
-  color: black;
+  background-color: #bb9090;
+  color: #fff0f0;
   border: none;
   font-weight: bold;
+}
+
+.fade-out {
+  animation: fadeOut ease 1s;
+  -webkit-animation: fadeOut ease 1s;
+  -moz-animation: fadeOut ease 1s;
+  -o-animation: fadeOut ease 1s;
+  -ms-animation: fadeOut ease 1s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .guest-header {
@@ -205,6 +303,39 @@ label {
 
 .confirmation-container {
   display: none;
+}
+
+.btn-secondary {
+  background-color: #bb9090;
+  border: none;
+  box-shadow: 5px 5px 5px #000000;
+}
+
+.footer {
+  color: #bb9090;
+  background-color: #fff0f0;
+  font-size: 1.25em;
+}
+
+.footer-link {
+  padding-top: 0;
+  color: #bb9090;
+  display: block;
+}
+
+a.footer-link:hover {
+  color: #bb9090;
+}
+
+.social a {
+  color: #bb9090;
+  font-size: 2em;
+}
+
+.social a:hover {
+  color: #bb9090;
+  font-size: 2em;
+  opacity: 0.75;
 }
 
 .clear {

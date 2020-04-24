@@ -8454,7 +8454,9 @@ var month = new Date().getMonth();
 var year = 0;
 var selectedDays = new Array();
 var mousedown = false;
-var mousemove = false; // function getReserveDate(day) {
+var mousemove = false; // DOM Elements
+
+var clndr = document.querySelector('.calendar'); // function getReserveDate(day) {
 
 var getReserveDate = function getReserveDate(day, month, year) {
   // let date = new Date(year + ' ' + month + ', ' + day);
@@ -8466,8 +8468,12 @@ var getReserveDate = function getReserveDate(day, month, year) {
   date = fullYear + '-' + (monthInt + 1) + '-' + getDate;
 
   if (date) {
-    document.querySelector('.calendar').style.display = 'none';
-    document.querySelector('.confirmation-container').style.display = 'block';
+    clndr.classList.add('fade-out');
+    var transition = document.querySelector('.fade-out');
+    transition.addEventListener('transitionend', function () {
+      document.querySelector('.calendar').style.display = 'none';
+      document.querySelector('.confirmation-container').style.display = 'block';
+    });
   }
 
   return date;
@@ -8591,7 +8597,6 @@ exports.loadCalendarDays = loadCalendarDays;
 
 var daysInMonth = function daysInMonth(month, year) {
   var d = new Date(year, month + 1, 0);
-  console.log("month index(0-11): ".concat(month));
   return d.getDate();
 };
 
@@ -8934,7 +8939,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58668" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62658" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

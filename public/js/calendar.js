@@ -20,6 +20,9 @@ let selectedDays = new Array();
 let mousedown = false;
 let mousemove = false;
 
+// DOM Elements
+const clndr = document.querySelector('.calendar');
+
 // function getReserveDate(day) {
 export const getReserveDate = (day, month, year) => {
   // let date = new Date(year + ' ' + month + ', ' + day);
@@ -30,8 +33,14 @@ export const getReserveDate = (day, month, year) => {
   let getDate = date.getDate();
   date = fullYear + '-' + (monthInt + 1) + '-' + getDate;
   if (date) {
-    document.querySelector('.calendar').style.display = 'none';
-    document.querySelector('.confirmation-container').style.display = 'block';
+    clndr.classList.add('fade-out');
+
+    const transition = document.querySelector('.fade-out');
+
+    transition.addEventListener('transitionend', () => {
+      document.querySelector('.calendar').style.display = 'none';
+      document.querySelector('.confirmation-container').style.display = 'block';
+    });
   }
   return date;
 };
@@ -154,7 +163,6 @@ export const loadCalendarDays = () => {
 
 export const daysInMonth = (month, year) => {
   var d = new Date(year, month + 1, 0);
-  console.log(`month index(0-11): ${month}`);
   return d.getDate();
 };
 
