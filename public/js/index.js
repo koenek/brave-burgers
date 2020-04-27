@@ -1,9 +1,13 @@
 import '@babel/polyfill';
-import { makeReservation } from './reservation';
-import { calendar, getReserveDate } from './calendar';
+import { makeReservation, directBack } from './reservation';
+import { calendar, getReserveDate, checkDate } from './calendar';
 
 // DOM ELEMENTS
 const reservationForm = document.getElementById('form--reservation');
+const reservationConfirmedBtn = document.querySelector(
+  '#btn-reservation-confirmed'
+);
+const reservationErrorBtn = document.querySelector('#btn-reservation-error');
 
 if (reservationForm) {
   reservationForm.addEventListener('submit', (e) => {
@@ -44,3 +48,9 @@ if (reservationForm) {
 
 // Add event listener for reservation calendar
 window.addEventListener('load', calendar());
+
+if (reservationConfirmedBtn) {
+  reservationConfirmedBtn.addEventListener('click', directBack);
+}
+
+reservationErrorBtn.addEventListener('click', directBack);

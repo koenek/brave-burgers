@@ -22,6 +22,7 @@ let mousemove = false;
 
 // DOM Elements
 const clndr = document.querySelector('.calendar');
+const clndrDays = document.querySelector('#calendarDays');
 
 // function getReserveDate(day) {
 export const getReserveDate = (day, month, year) => {
@@ -35,12 +36,11 @@ export const getReserveDate = (day, month, year) => {
   if (date) {
     clndr.classList.add('fade-out');
 
-    const transition = document.querySelector('.fade-out');
-
-    transition.addEventListener('transitionend', () => {
-      document.querySelector('.calendar').style.display = 'none';
+    window.setTimeout(() => {
+      clndr.classList.add('d-none');
+      clndr.classList.remove('fade-out');
       document.querySelector('.confirmation-container').style.display = 'block';
-    });
+    }, 1000);
   }
   return date;
 };
@@ -154,6 +154,7 @@ export const loadCalendarDays = () => {
     });
 
     document.getElementById('calendarDays').appendChild(d);
+    checkDate();
   }
 
   var clear = document.createElement('div');
@@ -175,4 +176,22 @@ export const calendar = () => {
   loadCalendarMonths();
   loadCalendarYears();
   loadCalendarDays();
+};
+
+export const checkDate = () => {
+  let date = new Date().getDate();
+  let curMonth = new Date().getMonth();
+  let curYear = new Date().getFullYear();
+  const datesArray = [...clndrDays.children];
+  datesArray.forEach((el) => {
+    if (curMonth > month) {
+      el.classList.add('avoid-clicks');
+    }
+    if (el.innerHTML < date) {
+      el.classList.add('avoid-clicks');
+    }
+    if (curYear < year) {
+      el.classList.remove('avoid-clicks');
+    }
+  });
 };

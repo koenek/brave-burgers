@@ -123,7 +123,7 @@
 
   </section>
 
-  <section class="reserveren text-center pt-5 pb-5">
+  <section class="reserveren text-center pt-5 pb-5 my-auto">
 
     <div class="container">
 
@@ -161,6 +161,20 @@
             <div id="calendarDays" class="days">
             </div>
           </div>
+      </div>
+
+      <div class="confirm-reservation lead d-none">
+        <h1>Bedankt voor uw reservering!</h1>
+        <p>U ontvangt een bevestiging van uw reservering op het door u opgegeven mail adres.</p>
+        <h3>Reservering wijzigen of annuleren</h3>
+        <p>Wenst u de reservering te wijzigen of te annuleren? Neem dan telefonisch contact met ons op via 030 - 12345678</p>
+        <!-- <button class="btn btn-secondary" type="button" id="btn-reservation-confirmed">Terug naar de website</button> -->
+      </div>
+
+      <div class="error-reservation lead d-none">
+        <h1>Er is iets fout gegeaan met uw reservering</h1>
+        <p>Probeer het nogmaals of reserveer telefonisch via 030 - 12345678</p>
+        <button class="btn btn-secondary" type="button" id="btn-reservation-error">Terug naar de website</button>
       </div>
 
       <div class="confirmation-container">
@@ -230,7 +244,10 @@
           </div>
         </div>
 
-        <button class="btn btn-secondary mb-1 mt-1" type="submit">Reservering bevestigen</button>
+        <button class="btn btn-secondary mb-1 mt-1" id="btn-reservation" type="submit">Reservering bevestigen</button>
+        <button class="btn btn-secondary d-none" id="btn-reservation-processing" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
         </form>
 
       </div>

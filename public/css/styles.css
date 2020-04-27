@@ -93,6 +93,7 @@ a.nav-link:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 80vh !important;
   width: 100vw !important;
   max-height: 100%;
   max-width: 100%;
@@ -208,11 +209,22 @@ a.nav-link:hover {
   opacity: 1;
 }
 
+.avoid-clicks {
+  pointer-events: none;
+  background-color: #ddc0c0;
+  opacity: 0.6;
+}
+
 .calendar .calendar-dates .days .day.label {
   background-color: #bb9090;
   color: #fff0f0;
   border: none;
   font-weight: bold;
+}
+
+.post-fade-out > * {
+  height: 0;
+  width: 0;
 }
 
 .fade-out {
@@ -303,6 +315,7 @@ a.nav-link:hover {
 
 .confirmation-container {
   display: none;
+  padding: 75px 0px 0px 0px;
 }
 
 .btn-secondary {
