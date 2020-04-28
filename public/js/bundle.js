@@ -8365,7 +8365,29 @@ module.exports.default = axios;
 
 },{"./utils":"../../node_modules/axios/lib/utils.js","./helpers/bind":"../../node_modules/axios/lib/helpers/bind.js","./core/Axios":"../../node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"../../node_modules/axios/lib/core/mergeConfig.js","./defaults":"../../node_modules/axios/lib/defaults.js","./cancel/Cancel":"../../node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"../../node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"../../node_modules/axios/lib/cancel/isCancel.js","./helpers/spread":"../../node_modules/axios/lib/helpers/spread.js"}],"../../node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"../../node_modules/axios/lib/axios.js"}],"reservation.js":[function(require,module,exports) {
+},{"./lib/axios":"../../node_modules/axios/lib/axios.js"}],"validate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.validatePhone = exports.validateEmail = void 0;
+
+var validateEmail = function validateEmail(email) {
+  var regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+  return regex.test(email);
+};
+
+exports.validateEmail = validateEmail;
+
+var validatePhone = function validatePhone(phone) {
+  var vast_nummer = /^(((0)[1-9]{2}[0-9][-]?[1-9][0-9]{5})|((\\+31|0|0031)[1-9][0-9][-]?[1-9][0-9]{6}))$/;
+  var mobiel_nummer = /^(((\\+31|0|0031)6){1}[1-9]{1}[0-9]{7})$/i;
+  return vast_nummer.test(phone) || mobiel_nummer.test(phone);
+};
+
+exports.validatePhone = validatePhone;
+},{}],"reservation.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8374,6 +8396,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.directBack = exports.makeReservation = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
+
+var _validate = require("./validate");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8387,6 +8411,8 @@ var reservationBtnProcessing = document.querySelector('#btn-reservation-processi
 var confirmReservation = document.querySelector('.confirm-reservation');
 var confirmationContainer = document.querySelector('.confirmation-container');
 var errorContainer = document.querySelector('.error-reservation');
+var emailInput = document.getElementById('email');
+var telInput = document.getElementById('tel');
 
 var makeReservation = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(reservationDate, reservationTime, guests, email, telNum, comments) {
@@ -8459,7 +8485,25 @@ var directBack = function directBack() {
 };
 
 exports.directBack = directBack;
-},{"axios":"../../node_modules/axios/index.js"}],"calendar.js":[function(require,module,exports) {
+emailInput.addEventListener('input', function (e) {
+  e.preventDefault();
+
+  if ((0, _validate.validateEmail)(emailInput.value)) {
+    emailInput.setCustomValidity('');
+  } else {
+    emailInput.setCustomValidity("Voer een geldig e-mailadres in. Een e-mailadres moet onder anderen een '@' en een '.' bevatten");
+  }
+});
+telInput.addEventListener('input', function (e) {
+  e.preventDefault();
+
+  if ((0, _validate.validatePhone)(telInput.value)) {
+    telInput.setCustomValidity('');
+  } else {
+    telInput.setCustomValidity('Voer een geldig Nederlands telefoonnummer in. Het telefoonnummer dient te beginnen met 1 van de opties: 0031, +31 of 0. Mobiele en vaste nummers zijn beiden mogelijk');
+  }
+});
+},{"axios":"../../node_modules/axios/index.js","./validate":"validate.js"}],"calendar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9006,7 +9050,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49198" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60047" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

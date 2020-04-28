@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { validateEmail, validatePhone } from './validate';
 
 // DOM ELEMENTS
 const reservationBtn = document.querySelector('#btn-reservation');
@@ -8,6 +9,9 @@ const reservationBtnProcessing = document.querySelector(
 const confirmReservation = document.querySelector('.confirm-reservation');
 const confirmationContainer = document.querySelector('.confirmation-container');
 const errorContainer = document.querySelector('.error-reservation');
+
+const emailInput = document.getElementById('email');
+const telInput = document.getElementById('tel');
 
 export const makeReservation = async (
   reservationDate,
@@ -56,3 +60,25 @@ export const makeReservation = async (
 export const directBack = () => {
   location.assign('/');
 };
+
+emailInput.addEventListener('input', (e) => {
+  e.preventDefault();
+  if (validateEmail(emailInput.value)) {
+    emailInput.setCustomValidity('');
+  } else {
+    emailInput.setCustomValidity(
+      "Voer een geldig e-mailadres in. Een e-mailadres moet onder anderen een '@' en een '.' bevatten"
+    );
+  }
+});
+
+telInput.addEventListener('input', (e) => {
+  e.preventDefault();
+  if (validatePhone(telInput.value)) {
+    telInput.setCustomValidity('');
+  } else {
+    telInput.setCustomValidity(
+      'Voer een geldig Nederlands telefoonnummer in. Het telefoonnummer dient te beginnen met 1 van de opties: 0031, +31 of 0. Mobiele en vaste nummers zijn beiden mogelijk'
+    );
+  }
+});
