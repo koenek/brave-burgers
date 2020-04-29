@@ -3,6 +3,7 @@ const express = require('express');
 
 const viewRouter = require('./routes/viewRoutes');
 const reservationRouter = require('./routes/reservationRoutes');
+const emailRouter = require('./routes/emailRoutes');
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 // Routes
 app.use('/', viewRouter);
 app.use('/reservations', reservationRouter);
+app.use('/sendemail', emailRouter);
 
 module.exports = app;

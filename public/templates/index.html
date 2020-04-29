@@ -296,7 +296,7 @@
       </div>
 
       <div class="error-reservation lead d-none">
-        <h1>Er is iets fout gegeaan met uw reservering</h1>
+        <h1>Er is iets fout gegaan met uw reservering</h1>
         <p>Probeer het nogmaals of reserveer telefonisch via 030 - 12345678</p>
         <button class="btn btn-secondary" type="button" id="btn-reservation-error">Terug naar de website</button>
       </div>
@@ -346,7 +346,7 @@
             <input type="email" class="form-control" id="email" placeholder="voorbeeld@email.nl" required>
           </div>
           <div class="col-lg-6 mb-3">
-            <input type="text" class="form-control" id="tel" placeholder="bijv. 06 12345678">
+            <input type="text" class="form-control" id="tel" placeholder="bijv. 0612345678">
           </div>
           <!-- <div class="col-lg-2">
             
@@ -381,29 +381,44 @@
   <section class="contact text-center pt-5 pb-5" id="contact">
     <h3 class="masthead-brand contact-heading pb-5">CONTACT</h3>
     <div class="container">
-      <h4 class="mb-4">Bel ons via <span class="italicize">030 - 12345678</span> of stuur ons een <span class="italicize">e-mail:</span></h4>
 
-      <form id="send-email">
-      <div class="form-row justify-content-center">
-        <div class="col-lg-6 mb-3">
-          <input type="text" class="form-control" id="naam" placeholder="Uw naam">
-        </div>
-        <div class="col-lg-6 mb-3">
-          <input type="email" class="form-control" id="email" placeholder="voorbeeld@email.nl" required>
-        </div>
+      <div class="confirm-contact lead d-none">
+        <h1>Bedankt voor uw e-mail!</h1>
+        <p>Wij zullen u zo spoedig mogelijk van een reactie voorzien.</p>
       </div>
-      <div class="form-row justify-content-center">
-      <div class="col-lg-9 mb-3">
-        <textarea class="form-control" id="contact-comments" placeholder="Opmerkingen(optioneel)"></textarea>
+
+      <div class="error-contact lead d-none">
+        <h1>Er is iets fout gegaan met het verzenden van uw e-mail</h1>
+        <p>Probeer het nogmaals of mail ons direct via <a href="mailto:info@braveburgers.nl">info@braveburgers.nl</a>
+        </p>
+        <button class="btn btn-secondary" type="button" id="btn-reservation-error">Terug naar de website</button>
       </div>
-    </div>
 
-    <button class="btn btn-secondary mb-1 mt-1" id="btn-contact" type="submit">Verstuur email</button>
-    <button class="btn btn-secondary d-none" id="btn-contact-processing" type="button" disabled>
-      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-    </button>
+      <div class="contact-container">
+        <h4 class="mb-4">Bel ons via <span class="italicize">030 - 12345678</span> of stuur ons een <span
+            class="italicize">e-mail:</span></h4>
 
-    </form>
+        <form id="form--contact">
+          <div class="form-row justify-content-center">
+            <div class="col-lg-6 mb-3">
+              <input type="text" class="form-control" id="contact-name" placeholder="Uw naam">
+            </div>
+            <div class="col-lg-6 mb-3">
+              <input type="email" class="form-control" id="contact-email" placeholder="voorbeeld@email.nl" required>
+            </div>
+          </div>
+          <div class="form-row justify-content-center">
+            <div class="col-lg-9 mb-3">
+              <textarea class="form-control" id="contact-comments" placeholder="Uw bericht" required></textarea>
+            </div>
+          </div>
+          <button class="btn btn-secondary mb-1 mt-1" id="btn-contact" type="submit">Verstuur email</button>
+          <button class="btn btn-secondary d-none" id="btn-contact-processing" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          </button>
+      </div>
+
+      </form>
   </section>
 
   <section class="footer pt-5 pb-5">

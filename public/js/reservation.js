@@ -14,6 +14,7 @@ const emailInput = document.getElementById('email');
 const telInput = document.getElementById('tel');
 
 export const makeReservation = async (
+  name,
   reservationDate,
   reservationTime,
   guests,
@@ -28,6 +29,7 @@ export const makeReservation = async (
       method: 'POST',
       url: '/reservations',
       data: {
+        name,
         reservationDate,
         reservationTime,
         guests,
@@ -78,7 +80,7 @@ telInput.addEventListener('input', (e) => {
     telInput.setCustomValidity('');
   } else {
     telInput.setCustomValidity(
-      'Voer een geldig Nederlands telefoonnummer in. Het telefoonnummer dient te beginnen met 1 van de opties: 0031, +31 of 0. Mobiele en vaste nummers zijn beiden mogelijk'
+      'Voer een telefoonnummer in zonder spaties. Het telefoonnummer dient te beginnen met 1 van de opties: 0031, +31 of 0. Mobiele en vaste nummers zijn beiden mogelijk'
     );
   }
 });

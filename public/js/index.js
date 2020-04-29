@@ -1,6 +1,7 @@
 import '@babel/polyfill';
 import { makeReservation, directBack } from './reservation';
 import { calendar, getReserveDate, checkDate } from './calendar';
+import { sendEmail } from './email';
 
 // DOM ELEMENTS
 const reservationForm = document.getElementById('form--reservation');
@@ -9,9 +10,16 @@ const reservationConfirmedBtn = document.querySelector(
 );
 const reservationErrorBtn = document.querySelector('#btn-reservation-error');
 
+const contactForm = document.getElementById('form--contact');
+
 if (reservationForm) {
   reservationForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    // name
+
+    const name = document.getElementById('name').value;
+
     // reservationDate
 
     let day = document.querySelector('.selected').innerHTML;
@@ -36,6 +44,7 @@ if (reservationForm) {
     const comments = document.getElementById('comments').value;
 
     makeReservation(
+      name,
       reservationDate,
       reservationTime,
       guests,
@@ -43,6 +52,17 @@ if (reservationForm) {
       telNum,
       comments
     );
+  });
+}
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let name = document.querySelector('#contact-name').value;
+    let email = document.querySelector('#contact-email').value;
+    let comments = document.querySelector('#contact-comments').value;
+
+    sendEmail(name, email, comments);
   });
 }
 

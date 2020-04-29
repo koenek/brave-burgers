@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "mongoose": "^5.9.10",
+    "nodemailer": "^6.4.6",
     "parcel-bundler": "^1.12.4",
     "path": "^0.12.7"
   },

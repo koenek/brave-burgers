@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const reservationSchema = new mongoose.Schema({
+  // name
+  name: {
+    type: String,
+    required: [true, 'A reservation must have a name'],
+  },
   // date
   reservationDate: {
     type: Date,
