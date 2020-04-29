@@ -393,6 +393,20 @@ a.nav-link:hover {
   color: #fff0f0;
 }
 
+#contact-comments {
+  height: 150px;
+}
+
+#btn-contact {
+  color: #bb9090;
+  background-color: #fffff0;
+  border: none;
+}
+
+#btn-contact:hover {
+  background-color: #ddc0c0;
+}
+
 .footer {
   color: #bb9090;
   background-color: #fff0f0;

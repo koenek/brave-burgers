@@ -54,3 +54,11 @@ if (reservationConfirmedBtn) {
 }
 
 reservationErrorBtn.addEventListener('click', directBack);
+
+// Popover for menu on smaller screens. Added ':visible' to prevent error in console
+$('.navbar-toggler:visible')
+  .popover({
+    placement: 'bottom',
+    content: 'Klik voor menu',
+  })
+  .popover('show');
