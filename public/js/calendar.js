@@ -28,7 +28,8 @@ const clndrDays = document.querySelector('#calendarDays');
 export const getReserveDate = (day, month, year) => {
   // let date = new Date(year + ' ' + month + ', ' + day);
   let date = new Date(year + ' ' + month + ', ' + day);
-  date.setHours(date.getHours() + 2);
+  // date.setHours(date.getHours() + 2);
+
   let fullYear = date.getFullYear();
   let monthInt = date.getMonth();
   let getDate = date.getDate();
@@ -179,7 +180,7 @@ export const calendar = () => {
 };
 
 export const checkDate = () => {
-  let date = new Date().getDate();
+  let curDate = new Date().getDate();
   let curMonth = new Date().getMonth();
   let curYear = new Date().getFullYear();
   const datesArray = [...clndrDays.children];
@@ -187,7 +188,7 @@ export const checkDate = () => {
     if (curMonth > month) {
       el.classList.add('avoid-clicks');
     }
-    if (el.innerHTML < date) {
+    if (curMonth === month && el.innerHTML < curDate) {
       el.classList.add('avoid-clicks');
     }
     if (curYear < year) {

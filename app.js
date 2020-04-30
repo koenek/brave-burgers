@@ -7,6 +7,9 @@ const emailRouter = require('./routes/emailRoutes');
 
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Body parser for reading data from body into req.body

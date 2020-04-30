@@ -8539,8 +8539,8 @@ var clndrDays = document.querySelector('#calendarDays'); // function getReserveD
 
 var getReserveDate = function getReserveDate(day, month, year) {
   // let date = new Date(year + ' ' + month + ', ' + day);
-  var date = new Date(year + ' ' + month + ', ' + day);
-  date.setHours(date.getHours() + 2);
+  var date = new Date(year + ' ' + month + ', ' + day); // date.setHours(date.getHours() + 2);
+
   var fullYear = date.getFullYear();
   var monthInt = date.getMonth();
   var getDate = date.getDate();
@@ -8696,7 +8696,7 @@ var calendar = function calendar() {
 exports.calendar = calendar;
 
 var checkDate = function checkDate() {
-  var date = new Date().getDate();
+  var curDate = new Date().getDate();
   var curMonth = new Date().getMonth();
   var curYear = new Date().getFullYear();
 
@@ -8707,7 +8707,7 @@ var checkDate = function checkDate() {
       el.classList.add('avoid-clicks');
     }
 
-    if (el.innerHTML < date) {
+    if (curMonth === month && el.innerHTML < curDate) {
       el.classList.add('avoid-clicks');
     }
 
@@ -27242,7 +27242,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62364" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56867" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,0 +1,321 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='')
+  title BRAVE BURGERS | Reserveer nu!
+  link(rel='shortcut icon' type='image/png' href='img/favicon.ico')
+  script(src='https://kit.fontawesome.com/dd7391bfa9.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
+  link(href='https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='../css/styles.css')
+.cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column.text-center
+  header.masthead.mb-auto
+    .inner
+      .container
+        nav.navbar.navbar-expand-lg
+          h3.masthead-brand BRAVE BURGERS
+          button.navbar-toggler.d-lg-none(type='button' data-toggle='collapse' data-target='#navbarToggler' aria-controls='navbarToggler' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+              i.fas.fa-hamburger
+          #navbarToggler.collapse.navbar-collapse.w-100
+            ul.navbar-nav.w-100.mt-lg-0
+              .ml-auto
+              li.nav-item
+                a.nav-link(href='#impressie') impressie
+              li.nav-item
+                a.nav-link(href='#menu') menu
+              li.nav-item
+                a.nav-link(href='#reserveren') reserveren
+              li.nav-item
+                a.nav-link(href='#contact') contact
+  main.inner.cover(role='main')
+    .container
+      .jumbotron.jumbotron-leader
+        h1.cover-heading BRAVE BURGERS
+        p.lead.pt-5 brave burgers voor brave burgers
+  footer.mastfoot.mt-auto.mb-auto
+    .inner.container.lead
+      p.lead Heerlijk lunchen, dineren &amp; borrelen in een informele sfeer
+      h1.strong.welcome-message Welkom bij Brave Burgers
+section#impressie.impression.text-center.pt-5
+  h3.masthead-brand.text-black.mb-4 IMPRESSIE
+  .container.pb-5
+    #carouselIndicators.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carouselIndicators' data-slide-to='0')
+        li(data-target='#carouselIndicators' data-slide-to='1')
+        li(data-target='#carouselIndicators' data-slide-to='2')
+        li(data-target='#carouselIndicators' data-slide-to='3')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='../img/impression-1.jpg' alt='...')
+        .carousel-item
+          img.d-block.w-100(src='../img/impression-2.png' alt='...')
+        .carousel-item
+          img.d-block.w-100(src='../img/impression-3.png' alt='...')
+        .carousel-item
+          img.d-block.w-100(src='../img/impression-4.png' alt='...')
+      a.carousel-control-prev(href='#carouselIndicators' role='button' data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselIndicators' role='button' data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+    p.quote.mt-5
+      | - 
+      span.bold Brave burger
+      span.italicize
+        | , (schertsend) overijverig persoon die met
+        | zichtbare vlijt aan zijn of haar burgerplicht voldoet. -
+section#menu.menu.text-center.pt-5.pb-5
+  h3.masthead-brand.menu-heading.pb-5 MENU
+  .container
+    h5.text-right
+      span.italicize Starters
+      |  --
+    .row
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/nachos.png' alt='Card image cap')
+          .card-body.justify-content-center
+            p.text-left
+              span.italicize - Flinke Nachos
+            p.card-text Laborum minim ut consectetur deserunt ground round elit buffalo et pariatur.
+            p.text-right.mb-0.italicize.bold - &euro; 6,50
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/garlic-bread.png' alt='Card image cap')
+          .card-body
+            p.text-left
+              span.italicize - Kloekmoedig knoflookbrood
+            p.card-text Prosciutto aliqua hamburger elit corned beef tempor anim salami minim.
+            p.text-right.mb-0.italicize.bold - &euro; 5,50
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/pumpkin-soup.png' alt='Card image cap')
+          .card-body
+            p.text-left
+              span.italicize - Stoere Soep
+            p.card-text
+              | Frankfurter adipisicing pariatur burgdoggen, nulla tenderloin kielbasa est
+              | reprehenderit.
+            p.text-right.mb-0.italicize.bold - &euro; 6,50
+    h5.text-right
+      span.italicize Mains
+      |  --
+    .row
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/main-1.jpg' alt='Card image cap')
+          .card-body
+            p.text-left
+              span.italicize - De Onverschrokken Klassieker
+            p.card-text Pancetta sunt ham, jerky cupidatat tri-tip cillum aliqua.
+            p.text-right.mb-0.italicize.bold - &euro; 13,50
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/main-2.jpg' alt='Card image cap')
+          .card-body
+            p.text-left
+              span.italicize - De Onverschrokken Klassieker x2
+            p.card-text Tempor shank biltong officia consequat occaecat. 
+            p.text-right.mb-0.italicize.bold - &euro; 21,00
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/main-3.jpg' alt='Card image cap')
+          .card-body
+            p.text-left
+              span.italicize - Brave Burger &amp; Chips
+            p.card-text orchetta ground round ut duis buffalo, aliqua pork chop prosciutto veniam.
+            p.text-right.mb-0.italicize.bold - &euro; 12,00
+    h5.text-right
+      span.italicize Desserts
+      |  --
+    .row
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/kaasplank.png' alt='Card image cap')
+          .card-body
+            p.text-left
+              span.italicize - Dapper plankje
+            p.card-text
+              | Est fugiat ham hock jerky dolor in, spare ribs prosciutto quis sint id pancetta
+              | adipisicing. Magna veniam ham hock ham et andouille ribeye.
+            p.text-right.mb-0.italicize.bold - &euro; 7,50
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/brownie.png' alt='Card image cap')
+          .card-body
+            p.text-left
+              span.italicize - Brave Brownie
+            p.card-text Boudin ex hamburger salami, tongue in sed ad.
+            p.text-right.mb-0.italicize.bold - &euro; 5,00
+      .col-md-4
+        .card.mb-4.box-shadow
+          img.card-img-top(src='../img/cheesecake.png' alt='Card image cap')
+          .card-body
+            p.text-left
+              span.italicize - Het Koene Cakeje
+            p.card-text
+              | Cupim pork chop ground round chicken et bacon aute commodo shank consectetur lorem
+              | magna frankfurter.
+            p.text-right.mb-0.italicize.bold - &euro; 6,50
+section#reserveren.reserveren.text-center.pt-5.pb-5.my-auto
+  .container
+    h3.masthead-brand.reserveren-heading.pb-5 RESERVEREN
+    .confirm-reservation.lead.d-none
+      h1 Bedankt voor uw reservering!
+      p
+        | U ontvangt een bevestiging van uw reservering op het door u opgegeven mail adres.
+      h3 Reservering wijzigen of annuleren
+      p
+        | Wenst u de reservering te wijzigen of te annuleren? Neem dan telefonisch contact met ons op via 030 -
+        | 12345678
+    .error-reservation.lead.d-none
+      h1 Er is iets fout gegaan met uw reservering
+      p Probeer het nogmaals of reserveer telefonisch via 030 - 12345678
+      button#btn-reservation-error.btn.btn-secondary(type='button') Terug naar de website
+
+    form#form--reservation
+      #calendar.calendar
+        .calendar-btn.month-btn(onclick="$('#months').toggle('fast')")
+          span#curMonth
+          #months.months.dropdown
+        .calendar-btn.year-btn(onclick="$('#years').toggle('fast')")
+          span#curYear
+          #years.years.dropdown
+        .clear
+          .calendar-dates
+            .days
+              .day.label Z
+              .day.label M
+              .day.label D
+              .day.label W
+              .day.label D
+              .day.label V
+              .day.label Z
+              .clear
+            #calendarDays.days
+      .confirmation-container.text-center
+        .form-row.justify-content-center
+          .col-lg-6.mb-3
+            select#guests.guest-select.form-control(required='')
+              option(value='') --Selecteer het aantal gasten--
+              option(value='1') 1 personen
+              option(value='2') 2 personen
+              option(value='3') 3 personen
+              option(value='4') 4 personen
+              option(value='5') 5 personen
+              option(value='6') 6 personen
+              option(value='7') 7 personen
+              option(value='8') 8 personen
+          .col-lg-6.mb-3
+            select#reservation--time.time-select.form-control(required='')
+              option(value='') --Selecteer het gewenste tijdstip--
+              option(value='17:00') 17:00
+              option(value='17:30') 17:30
+              option(value='18:00') 18:00
+              option(value='18:30') 18:30
+              option(value='19:00') 19:00
+              option(value='19:30') 19:30
+              option(value='20:00') 20:00
+              option(value='20:30') 20:30
+              option(value='21:00') 21:00
+        .form-row.justify-content-center
+          .col-lg-6.mb-3
+            input#email.form-control(type='email', placeholder='voorbeeld@email.nl', required='')
+          .col-lg-6.mb-3
+            input#tel.form-control(type='text', placeholder='bijv. 0612345678', required='')
+        .form-row.justify-content-center
+          .col-lg-6.mb-3
+            input#name.form-control(type='name', placeholder='Uw naam', required='')
+          .col-lg-6.mb-3
+            textarea#comments.form-control(placeholder='Opmerkingen(optioneel)')
+          button#btn-reservation.btn.btn-secondary.mb-1.mt-1(type='submit') Reservering bevestigen
+          button#btn-reservation-processing.btn.btn-secondary.d-none(type='button', disabled='')
+            span.spinner-border.spinner-border-sm(role='status', aria-hidden='true')
+
+section#contact.contact.text-center.pt-5.pb-5
+  h3.masthead-brand.contact-heading.pb-5 CONTACT
+  .container
+    .confirm-contact.lead.d-none
+      h1 Bedankt voor uw e-mail!
+      p Wij zullen u zo spoedig mogelijk van een reactie voorzien.
+    .error-contact.lead.d-none
+      h1 Er is iets fout gegaan met het verzenden van uw e-mail
+      p
+        | Probeer het nogmaals of mail ons direct via 
+        a(href='mailto:info@braveburgers.nl') info@braveburgers.nl
+      button#btn-reservation-error.btn.btn-secondary(type='button') Terug naar de website
+    .contact-container
+      h4.mb-4
+        | Bel ons via 
+        span.italicize 030 - 12345678
+        |  of stuur ons een 
+        span.italicize e-mail:
+      form#form--contact
+        .form-row.justify-content-center
+          .col-lg-6.mb-3
+            input#contact-name.form-control(type='text' placeholder='Uw naam' required='')
+          .col-lg-6.mb-3
+            input#contact-email.form-control(type='email' placeholder='voorbeeld@email.nl' required='')
+        .form-row.justify-content-center
+          .col-lg-9.mb-3
+            textarea#contact-comments.form-control(placeholder='Uw bericht' required='')
+        button#btn-contact.btn.btn-secondary.mb-1.mt-1(type='submit') Verstuur email
+        button#btn-contact-processing.btn.btn-secondary.d-none(type='button' disabled='')
+          span.spinner-border.spinner-border-sm(role='status' aria-hidden='true')
+section.footer.pt-5.pb-5
+  .container
+    h3.text-center.mb-3 BRAVE BURGERS
+    .d-flex.justify-content-between
+      span  | 
+      span
+        i.fas.fa-phone-alt
+        |  030 - 12345678
+      span  | 
+      span
+        i.fas.fa-at
+        |  info@braveburgers.nl
+      span  | 
+    .row.mt-3
+      .col-sm
+        h3.mt-3.bold
+          u Over Brave Burgers
+        p
+          | Beef ribs tempor tri-tip frankfurter irure cupidatat. Cow proident turkey pancetta.
+      .col-sm
+        h3.mt-3.bold
+          u Links
+        a.footer-link(href='#') Home
+        a.footer-link(href='#impressie') Impressie
+        a.footer-link(href='#menu') Menu
+        a.footer-link(href='#reserveren') Reserveren
+        a.footer-link(href='#contact') Contact
+      .col-sm
+        h3.mt-3.bold
+          u Socials
+        span.mr-1.social
+          a(href='https://nl-nl.facebook.com/')
+            i.fab.fa-facebook-square
+        span.mr-1.social
+          a(href='https://www.instagram.com/')
+            i.fab.fa-instagram-square
+        span.mr-1.social
+          a(href='https://twitter.com/')
+            i.fab.fa-twitter-square
+        span.mr-1.social
+          a(href='https://www.linkedin.com/home')
+            i.fab.fa-linkedin
+      .col-sm
+        h3.mt-3.bold
+          u Adres
+        p.mb-0 Utrechtseweg 100
+        p.mb-0 3500 AB Utrecht
+        p Nederland
+script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous')
+script(src='../js/bundle.js')

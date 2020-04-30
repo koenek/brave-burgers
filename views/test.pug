@@ -1,0 +1,74 @@
+section#reserveren.reserveren.text-center.pt-5.pb-5.my-auto
+  .container
+    h3.masthead-brand.reserveren-heading.pb-5 RESERVEREN
+    #calendar.calendar
+      .calendar-btn.month-btn(onclick="$('#months').toggle('fast')")
+        span#curMonth
+        #months.months.dropdown
+      .calendar-btn.year-btn(onclick="$('#years').toggle('fast')")
+        span#curYear
+        #years.years.dropdown
+      .clear
+      form#form--reservation
+        .calendar-dates
+          .days
+            .day.label Z
+            .day.label M
+            .day.label D
+            .day.label W
+            .day.label D
+            .day.label V
+            .day.label Z
+            .clear
+          #calendarDays.days
+        .confirmation-container.text-center
+            .form-row.justify-content-center
+                .col-lg-6.mb-3
+                select#guests.guest-select.form-control(required='')
+                    option(value='') --Selecteer het aantal gasten--
+                    option(value='1') 1 personen
+                    option(value='2') 2 personen
+                    option(value='3') 3 personen
+                    option(value='4') 4 personen
+                    option(value='5') 5 personen
+                    option(value='6') 6 personen
+                    option(value='7') 7 personen
+                    option(value='8') 8 personen
+                .col-lg-6.mb-3
+                select#reservation--time.time-select.form-control(required='')
+                    option(value='') --Selecteer het gewenste tijdstip--
+                    option(value='17:00') 17:00
+                    option(value='17:30') 17:30
+                    option(value='18:00') 18:00
+                    option(value='18:30') 18:30
+                    option(value='19:00') 19:00
+                    option(value='19:30') 19:30
+                    option(value='20:00') 20:00
+                    option(value='20:30') 20:30
+                    option(value='21:00') 21:00
+            .form-row.justify-content-center
+                .col-lg-6.mb-3
+                input#email.form-control(type='email' placeholder='voorbeeld@email.nl' required='')
+                .col-lg-6.mb-3
+                input#tel.form-control(type='text' placeholder='bijv. 0612345678' required='')
+            .form-row.justify-content-center
+                .col-lg-6.mb-3
+                input#name.form-control(type='name' placeholder='Uw naam' required='')
+                .col-lg-6.mb-3
+                textarea#comments.form-control(placeholder='Opmerkingen(optioneel)')
+            button#btn-reservation.btn.btn-secondary.mb-1.mt-1(type='submit') Reservering bevestigen
+            button#btn-reservation-processing.btn.btn-secondary.d-none(type='button' disabled='')
+                span.spinner-border.spinner-border-sm(role='status' aria-hidden='true')
+
+                    .confirm-reservation.lead.d-none
+      h1 Bedankt voor uw reservering!
+      p
+        | U ontvangt een bevestiging van uw reservering op het door u opgegeven mail adres.
+      h3 Reservering wijzigen of annuleren
+      p
+        | Wenst u de reservering te wijzigen of te annuleren? Neem dan telefonisch contact met ons op via 030 -
+        | 12345678
+    .error-reservation.lead.d-none
+      h1 Er is iets fout gegaan met uw reservering
+      p Probeer het nogmaals of reserveer telefonisch via 030 - 12345678
+      button#btn-reservation-error.btn.btn-secondary(type='button') Terug naar de website
