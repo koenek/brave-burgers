@@ -2,6 +2,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Reservation = require('../../models/reservationModel');
+const Email = require('../../models/emailModel');
 
 dotenv.config({ path: '../../config.env' });
 
@@ -27,6 +28,18 @@ const importData = async () => {
   try {
     await Reservation.create(reservations);
     console.log('Data successfully loaded!');
+  } catch (err) {
+    console.log(err);
+  }
+  process.exit();
+};
+
+// DELETE ALL DATA FROM DB
+const deleteData = async () => {
+  try {
+    await Reservation.deleteMany();
+    await Email.deleteMany();
+    console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);
   }
