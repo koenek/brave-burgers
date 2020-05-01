@@ -130,7 +130,7 @@ export const loadCalendarDays = () => {
 
       if (!selectedDays.includes(this.dataset.day)) {
         selectedDays.push(this.dataset.day);
-        console.log(this.dataset.day);
+        // console.log(this.dataset.day);
       } else selectedDays.splice(selectedDays.indexOf(this.dataset.day), 1);
     });
 

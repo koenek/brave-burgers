@@ -1,6 +1,5 @@
 const Reservation = require('../models/reservationModel');
-const Email = require('../utils/email');
-const moment = require('moment');
+const EmailSender = require('../utils/emailSender');
 
 exports.getAllReservations = async (req, res) => {
   try {
@@ -29,25 +28,15 @@ exports.createReservation = async (req, res) => {
   // req.body.reservationDate = reservationDate;
   try {
     const newReservation = await Reservation.create(req.body);
-    newReservation.reservationDate = newReservation.reservationDate.setDate(
-      newReservation.reservationDate.getDate() + 1
-    );
+    // newReservation.reservationDate = newReservation.reservationDate.setDate(
+    //   newReservation.reservationDate.getDate() + 1
+    // );
 
     // Make sure reservationDate is saved correctly
     newReservation.markModified('reservationDate');
     newReservation.save();
 
-    // var Assignment = mongoose.model('Assignment', { dueDate: Date });
-    // Assignment.findOne(function (err, doc) {
-    //   doc.dueDate.setMonth(3);
-    //   doc.save(callback); // THIS DOES NOT SAVE YOUR CHANGE
-
-    //   doc.markModified('dueDate');
-    //   doc.save(callback); // works
-    // })
-
-    // newReservation.telNum = '+31' + newReservation.telNum;
-    // await new Email(newReservation).sendConfirmReservation();
+    await new EmailSender(newReservation).sendConfirmReservation();
 
     res.status(201).json({
       status: 'success',

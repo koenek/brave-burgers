@@ -1,15 +1,18 @@
 const nodemailer = require('nodemailer');
 const pug = require('pug');
+const moment = require('moment');
 
-module.exports = class Email {
-  constructor(reservation) {
-    this.to = reservation.email;
-    this.firstName = reservation.name.split(' ')[0];
-    this.date = reservation.date;
-    this.time = reservation.time;
-    this.guests = reservation.guests;
-    this.comments = reservation.comments;
-    this.from = `Brave-Burgers <${process.env.EMAIL_FROM}>`;
+moment.locale('nl');
+
+module.exports = class EmailReceiver {
+  constructor(receivedEmail) {
+    this.to = process.env.EMAIL_TO;
+    this.from = receivedEmail.email;
+    this.firstName = receivedEmail.sender.split(' ')[0];
+    this.fullName = receivedEmail.sender;
+    this.comments = receivedEmail.comments;
+    this.momentReceived = moment().format('LLLL');
+    this.mailto = `mailto:${this.from}`;
   }
 
   newTransport() {
@@ -38,8 +41,14 @@ module.exports = class Email {
     // 1) Render HTML based on a pug template
     const html = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
       firstName: this.firstName,
+      fullName: this.fullName,
+      from: this.from,
+      comments: this.comments,
+      momentReceived: this.momentReceived,
+      mailto: this.mailto,
       subject,
     });
+    // console.log(firstName, fullName, from, comments, momentReceived);
     // 2) Define the email options
     const mailOptions = {
       from: this.from,
@@ -52,7 +61,13 @@ module.exports = class Email {
     await this.newTransport().sendMail(mailOptions);
   }
 
-  async sendConfirmReservation() {
-    await this.send('baseEmail', 'Uw reservering bij Brave Burgers');
+  async sendReceivedEmail() {
+    await this.send(
+      'received_email',
+      `Brave Burgers Webform: ${this.fullName} - ${this.comments.substring(
+        0,
+        30
+      )}...`
+    );
   }
 };
