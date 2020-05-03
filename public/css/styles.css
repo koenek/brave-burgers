@@ -4,6 +4,10 @@ body {
   background-color: #fff0f0;
 }
 
+.navbar {
+  padding: 0;
+}
+
 .nav-link {
   text-transform: uppercase;
   padding-top: 0;
@@ -24,12 +28,12 @@ a.nav-link:hover {
   width: 100vw !important;
   max-height: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: none;
 }
 
-.masthead-brand {
+/* .masthead-brand {
   font-size: 2.4em;
-}
+} */
 
 .navbar-toggler {
   padding-bottom: 0.6em;
@@ -391,6 +395,10 @@ a.nav-link:hover {
 
 .contact-heading {
   color: #fff0f0;
+}
+
+.contact-data {
+  font-size: 0.7em;
 }
 
 #contact-comments {

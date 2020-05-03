@@ -13,7 +13,7 @@ head
   header.masthead.mb-auto
     .inner
       .container
-        nav.navbar.navbar-expand-lg
+        nav.navbar.navbar-expand-lg.w-100
           h3.masthead-brand BRAVE BURGERS
           button.navbar-toggler.d-lg-none(type='button' data-toggle='collapse' data-target='#navbarToggler' aria-controls='navbarToggler' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
@@ -32,12 +32,14 @@ head
   main.inner.cover(role='main')
     .container
       .jumbotron.jumbotron-leader
-        h1.cover-heading BRAVE BURGERS
-        p.lead.pt-5 brave burgers voor brave burgers
-  footer.mastfoot.mt-auto.mb-auto
     .inner.container.lead
       p.lead Heerlijk lunchen, dineren &amp; borrelen in een informele sfeer
-      h1.strong.welcome-message Welkom bij Brave Burgers
+      h1.strong.welcome-message.d-none.d-lg-block Welkom bij Brave Burgers
+      h3.strong.d.block.d-lg-none Welkom bij Brave Burgers
+  footer.mastfoot.mt-auto.mb-auto
+    //- .inner.container.lead
+    //-   p.lead Heerlijk lunchen, dineren &amp; borrelen in een informele sfeer
+    //-   h1.strong.welcome-message Welkom bij Brave Burgers
 section#impressie.impression.text-center.pt-5
   h3.masthead-brand.text-black.mb-4 IMPRESSIE
   .container.pb-5
@@ -269,16 +271,32 @@ section#contact.contact.text-center.pt-5.pb-5
 section.footer.pt-5.pb-5
   .container
     h3.text-center.mb-3 BRAVE BURGERS
-    .d-flex.justify-content-between
-      span  | 
-      span
-        i.fas.fa-phone-alt
-        |  030 - 12345678
-      span  | 
-      span
-        i.fas.fa-at
-        |  info@braveburgers.nl
-      span  | 
+    .d-none.d-lg-block
+      .d-flex.justify-content-between
+        span  | 
+        span
+          i.fas.fa-phone-alt
+          |  
+          span 030 - 12345678
+        span  | 
+        span
+          i.fas.fa-at
+          |  
+          span info@braveburgers.nl
+        span  | 
+    .d-lg-none.contact-data
+      .d-flex.justify-content-between
+        span  | 
+        span
+          i.fas.fa-phone-alt
+          |  
+          span 030 - 12345678
+        span  | 
+        span
+          i.fas.fa-at
+          |  
+          span info@braveburgers.nl
+        span  | 
     .row.mt-3
       .col-sm
         h3.mt-3.bold
