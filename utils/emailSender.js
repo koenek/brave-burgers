@@ -22,7 +22,7 @@ module.exports = class EmailSender {
         service: 'SendGrid',
         auth: {
           user: process.env.SENDGRID_USERNAME,
-          pass: process.env.SENDGRID_Password,
+          pass: process.env.SENDGRID_PASSWORD,
         },
       });
     }

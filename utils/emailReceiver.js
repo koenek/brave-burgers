@@ -7,12 +7,13 @@ moment.locale('nl');
 module.exports = class EmailReceiver {
   constructor(receivedEmail) {
     this.to = process.env.EMAIL_TO;
-    this.from = receivedEmail.email;
+    this.from = process.env.EMAIL_FROM;
+    this.senderEmail = receivedEmail.email;
     this.firstName = receivedEmail.sender.split(' ')[0];
     this.fullName = receivedEmail.sender;
     this.comments = receivedEmail.comments;
     this.momentReceived = moment().format('LLLL');
-    this.mailto = `mailto:${this.from}`;
+    this.mailto = `mailto:${this.senderEmail}`;
   }
 
   newTransport() {
@@ -22,7 +23,7 @@ module.exports = class EmailReceiver {
         service: 'SendGrid',
         auth: {
           user: process.env.SENDGRID_USERNAME,
-          pass: process.env.SENDGRID_Password,
+          pass: process.env.SENDGRID_PASSWORD,
         },
       });
     }
@@ -44,6 +45,7 @@ module.exports = class EmailReceiver {
       firstName: this.firstName,
       fullName: this.fullName,
       from: this.from,
+      senderEmail: this.senderEmail,
       comments: this.comments,
       momentReceived: this.momentReceived,
       mailto: this.mailto,
